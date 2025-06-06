@@ -1,0 +1,47 @@
+<!--CHAN ZI RUI A24DW0088-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Checker</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script>
+        function calculateBMI() {
+            const height = parseFloat(document.getElementById("height").value) / 100;
+            const weight = parseFloat(document.getElementById("weight").value);
+            if (height > 0 && weight > 0) {
+                const bmi = weight / (height * height);
+                let category = "";
+
+                if (bmi < 18.5) category = "Underweight";
+                else if (bmi < 25) category = "Normal";
+                else if (bmi < 30) category = "Overweight";
+                else category = "Obese";
+
+                document.getElementById("bmiResult").innerHTML = 
+                    `Your BMI is <strong>${bmi.toFixed(2)}</strong> (${category})`;
+            } else {
+                document.getElementById("bmiResult").innerHTML = "Please enter valid numbers.";
+            }
+        }
+    </script>
+</head>
+<body class="w3-container w3-light-grey">
+
+    <div class="w3-card w3-white w3-padding w3-margin-top">
+        <h2>BMI Checker</h2>
+        <p>Enter your height (cm) and weight (kg):</p>
+
+        <label>Height (cm):</label>
+        <input id="height" class="w3-input w3-border" type="number">
+
+        <label>Weight (kg):</label>
+        <input id="weight" class="w3-input w3-border" type="number">
+
+        <button class="w3-button w3-blue w3-margin-top" onclick="calculateBMI()">Calculate</button>
+
+        <p id="bmiResult" class="w3-margin-top"></p>
+    </div>
+
+    <a href="Tools.html" class="w3-button w3-gray w3-margin-top">Back to Tools</a>
+</body>
+</html>

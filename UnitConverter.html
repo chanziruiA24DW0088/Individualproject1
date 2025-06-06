@@ -1,0 +1,53 @@
+<!--CHAN ZI RUI A24DW0088-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script>
+        function convert(type) {
+            const input = parseFloat(document.getElementById("inputValue").value);
+            let result = "";
+
+            switch(type) {
+                case 'cmToM':
+                    result = `${input} cm = ${(input / 100).toFixed(2)} m`;
+                    break;
+                case 'mToCm':
+                    result = `${input} m = ${(input * 100).toFixed(2)} cm`;
+                    break;
+                case 'mToKm':
+                    result = `${input} m = ${(input / 1000).toFixed(3)} km`;
+                    break;
+                case 'kmToM':
+                    result = `${input} km = ${(input * 1000).toFixed(0)} m`;
+                    break;
+                default:
+                    result = "Invalid.";
+            }
+
+            document.getElementById("convertResult").innerHTML = result;
+        }
+    </script>
+</head>
+<body class="w3-container w3-light-grey">
+
+    <div class="w3-card w3-white w3-padding w3-margin-top">
+        <h2>Unit Converter</h2>
+        <p>Enter a value and choose conversion type:</p>
+
+        <input id="inputValue" class="w3-input w3-border" type="number" placeholder="Enter value">
+
+        <div class="w3-margin-top">
+            <button class="w3-button w3-blue w3-margin-right" onclick="convert('cmToM')">cm to m</button>
+            <button class="w3-button w3-green w3-margin-right" onclick="convert('mToCm')">m to cm</button>
+            <button class="w3-button w3-yellow w3-margin-right" onclick="convert('mToKm')">m to km</button>
+            <button class="w3-button w3-red" onclick="convert('kmToM')">km to m</button>
+        </div>
+
+        <p id="convertResult" class="w3-margin-top"></p>
+    </div>
+
+    <a href="Tools.html" class="w3-button w3-gray w3-margin-top">Back to Tools</a>
+</body>
+</html>

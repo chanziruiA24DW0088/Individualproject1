@@ -1,0 +1,66 @@
+<!--CHAN  ZI RUI A24DW0088-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Income Tax Calculator</title>
+</head>
+<body>
+
+  <h2>Income Tax Calculator</h2>
+
+  <label>Enter your yearly income (RM):</label><br>
+  <input type="number" id="income"><br><br>
+
+  <button onclick="calculateTax()">Calculate Tax</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateTax() {
+      const income = parseFloat(document.getElementById("income").value);
+      const resultDisplay = document.getElementById("result");
+
+      if (isNaN(income) || income < 0) {
+        resultDisplay.innerText = "Please enter a valid income.";
+        return;
+      }
+
+      const brackets = [
+        { limit: 5000, rate: 0 },
+        { limit: 20000, rate: 0.01 },
+        { limit: 35000, rate: 0.03 },
+        { limit: 50000, rate: 0.08 },
+        { limit: 70000, rate: 0.13 },
+        { limit: 100000, rate: 0.21 },
+        { limit: 250000, rate: 0.24 },
+        { limit: 400000, rate: 0.245 },
+        { limit: 600000, rate: 0.25 },
+        { limit: 1000000, rate: 0.26 },
+        { limit: 2000000, rate: 0.28 },
+        { limit: Infinity, rate: 0.30 }
+      ];
+
+      let tax = 0;
+      let previousLimit = 0;
+
+      for (let i = 0; i < brackets.length; i++) {
+        let currentLimit = brackets[i].limit;
+        let currentRate = brackets[i].rate;
+
+        if (income > currentLimit) {
+          tax += (currentLimit - previousLimit) * currentRate;
+        } else {
+          tax += (income - previousLimit) * currentRate;
+          break;
+        }
+
+        previousLimit = currentLimit;
+      }
+
+      resultDisplay.innerText = "Your total tax is: RM " + tax.toFixed(2);
+    }
+  </script>
+    <br><a href="Tools.html" class="w3-button w3-gray w3-margin-top">Back to Tools</a>
+
+</body>
+</html>

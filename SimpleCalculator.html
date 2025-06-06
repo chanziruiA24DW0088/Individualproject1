@@ -1,0 +1,57 @@
+<!--CHAN ZI RUI A24DW0088-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+  <script>
+    function calculate(operation) {
+      let no1 = parseFloat(document.getElementById("no1").value);
+      let no2 = parseFloat(document.getElementById("no2").value);
+
+      var result;
+      switch (operation) {
+        case 'add':
+          result = no1 + no2;
+          break;
+        case 'subtract':
+          result = no1 - no2;
+          break;
+        case 'multiply':
+          result = no1 * no2;
+          break;
+        case 'divide':
+          if (no2 === 0) {
+            document.getElementById("display").innerHTML = "Cannot divide by zero";
+            return;
+          }
+          result = no1 / no2;
+          break;
+      }
+      document.getElementById("display").innerHTML = "Result is: "+result.toString();
+    }
+
+    function clearField() {
+      document.getElementById("display").innerHTML = "";
+      document.getElementById("no1").value = "";
+      document.getElementById("no2").value = "";
+    }
+  </script>
+</head>
+<body>
+
+  <h2>Simple Calculator</h2>
+
+  Value 1: <input type="text" id="no1"><br><br>
+  Value 2: <input type="text" id="no2"><br><br>
+
+  <input type="button" value="Add" onclick="calculate('add')">
+  <input type="button" value="Subtract" onclick="calculate('subtract')">
+  <input type="button" value="Multiply" onclick="calculate('multiply')">
+  <input type="button" value="Divide" onclick="calculate('divide')">
+  <input type="button" value="Clear" onclick="clearField()"><br><br>
+
+ <p id="display"></p>
+<br> <br> <a href="Tools.html" class="w3-button w3-gray w3-margin-top">Back to Tools</a>
+
+</body>
+</html>

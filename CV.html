@@ -2,62 +2,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My CV</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <title>My CV</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .w3-card {
+      max-width: 800px;
+      margin: auto;
+    }
+    img {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .section-title {
+      color: #0b5394;
+      border-bottom: 2px solid #0b5394;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body class="w3-light-grey">
 
-    <div class="w3-card w3-white w3-margin w3-padding">
-        <div class="w3-center">
-            <img src="assets/photo.jpg" alt="SelfPhoto" style="width:150px; border-radius:50%;">
-            <h2>Chan Zi Rui</h2>
-            <p><i>A newbie who is seeking a good opportunity.<br>
-            Confident and interested in solving complex problems.<br>
-            Able to maintain long-term focus on a task.</i></p>
-        </div>
-
-        <hr>
-
-        <h3>Contact</h3>
-        <p><strong>Email:</strong> chanzirui05@gmail.com</p>
-        <p><strong>Phone:</strong> 011-59362234</p>
-        <p><strong>Address:</strong><br>
-        15, Jalan Nusaria 2/16,<br>
-        Taman Nusantara,<br>
-        81550 Gelang Patah, Johor</p>
-
-        <hr>
-
-        <h3>Languages</h3>
-        <ul>
-            <li>English</li>
-            <li>Malay Language / Bahasa Melayu</li>
-            <li>Chinese / 中文</li>
-            <li>Japanese / 日本語</li>
-        </ul>
-
-        <hr>
-
-        <h3>Education</h3>
-        <ul>
-            <li><strong>2031</strong> – Bachelor of Computer Science (Software Engineering) with Honours<br>
-            University of Technology Malaysia (UTM)</li>
-            <li><strong>2026</strong> – Diploma in Computer Science<br>
-            University of Technology Malaysia (UTM)</li>
-        </ul>
-
-        <hr>
-
-        <h3>Skills</h3>
-        <ul>
-            <li>Proficient in Microsoft Excel</li>
-            <li>Proficient in C++</li>
-            <li>Proficient in Web Programming</li>
-            <li>Big Data Technologies</li>
-            <li>Complex Problem-solving</li>
-            <li>Analytical and Critical Thinking</li>
-        </ul>
+  <div class="w3-card w3-white w3-margin-top w3-padding-large w3-animate-opacity">
+    <div class="w3-center">
+      <img src="assets/photo.jpg" alt="SelfPhoto" style="width:150px; border-radius:50%;" class="w3-margin-bottom">
+      <h2 class="w3-text-dark-grey">Chan Zi Rui</h2>
+      <p class="w3-text-grey"><i>A newbie who is seeking a good opportunity.<br>
+      Confident and interested in solving complex problems.<br>
+      Able to maintain long-term focus on a task.</i></p>
     </div>
+
+    <hr>
+
+    <div class="w3-container">
+      <h3 class="section-title">📞 Contact</h3>
+      <p><b>Email:</b> chanzirui05@gmail.com</p>
+      <p><b>Phone:</b> 011-59362234</p>
+      <p><b>Address:</b><br>
+      15, Jalan Nusaria 2/16,<br>
+      Taman Nusantara,<br>
+      81550 Gelang Patah, Johor</p>
+    </div>
+
+    <hr>
+
+    <div class="w3-container">
+      <h3 class="section-title">🌐 Languages</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li>English</li>
+        <li>Malay Language / Bahasa Melayu</li>
+        <li>Chinese / 中文</li>
+        <li>Japanese / 日本語</li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div class="w3-container">
+      <h3 class="section-title">🎓 Education</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li>
+          <b>2031</b> – Bachelor of Computer Science (Software Engineering) with Honours<br>
+          University of Technology Malaysia (UTM)
+        </li>
+        <li>
+          <b>2026</b> – Diploma in Computer Science<br>
+          University of Technology Malaysia (UTM)
+        </li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div class="w3-container">
+      <h3 class="section-title">🛠️ Skills</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li>Microsoft Excel</li>
+        <li>C++</li>
+        <li>Web Programming</li>
+        <li>Big Data Technologies</li>
+        <li>Complex Problem-solving</li>
+        <li>Analytical and Critical Thinking</li>
+      </ul>
+    </div>
+  </div>
 
 </body>
 </html>
+

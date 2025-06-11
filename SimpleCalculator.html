@@ -1,57 +1,67 @@
-<!--CHAN ZI RUI A24DW0088-->
+<!-- CHAN ZI RUI A24DW0088 -->
 <!DOCTYPE html>
 <html>
 <head>
   <title>Simple Calculator</title>
-  <script>
-    function calculate(operation) {
-      let no1 = parseFloat(document.getElementById("no1").value);
-      let no2 = parseFloat(document.getElementById("no2").value);
-
-      var result;
-      switch (operation) {
-        case 'add':
-          result = no1 + no2;
-          break;
-        case 'subtract':
-          result = no1 - no2;
-          break;
-        case 'multiply':
-          result = no1 * no2;
-          break;
-        case 'divide':
-          if (no2 === 0) {
-            document.getElementById("display").innerHTML = "Cannot divide by zero";
-            return;
-          }
-          result = no1 / no2;
-          break;
-      }
-      document.getElementById("display").innerHTML = "Result is: "+result.toString();
-    }
-
-    function clearField() {
-      document.getElementById("display").innerHTML = "";
-      document.getElementById("no1").value = "";
-      document.getElementById("no2").value = "";
-    }
-  </script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<body>
+<body class="w3-light-grey">
 
-  <h2>Simple Calculator</h2>
+<div class="w3-container w3-card w3-white w3-margin w3-padding-large w3-round-large" style="max-width:600px; margin:auto; margin-top:50px;">
+  <h2 class="w3-center">Simple Calculator</h2>
 
-  Value 1: <input type="text" id="no1"><br><br>
-  Value 2: <input type="text" id="no2"><br><br>
+  <label class="w3-text-grey">Value 1:</label>
+  <input class="w3-input w3-border w3-margin-bottom" type="text" id="no1">
 
-  <input type="button" value="Add" onclick="calculate('add')">
-  <input type="button" value="Subtract" onclick="calculate('subtract')">
-  <input type="button" value="Multiply" onclick="calculate('multiply')">
-  <input type="button" value="Divide" onclick="calculate('divide')">
-  <input type="button" value="Clear" onclick="clearField()"><br><br>
+  <label class="w3-text-grey">Value 2:</label>
+  <input class="w3-input w3-border w3-margin-bottom" type="text" id="no2">
 
- <p id="display"></p>
-<br> <br> <a href="Tools.html" class="w3-button w3-gray w3-margin-top">Back to Tools</a>
+  <div class="w3-bar w3-margin-bottom">
+    <button class="w3-button w3-blue w3-margin-right" onclick="calculate('add')">Add</button>
+    <button class="w3-button w3-teal w3-margin-right" onclick="calculate('subtract')">Subtract</button>
+    <button class="w3-button w3-green w3-margin-right" onclick="calculate('multiply')">Multiply</button>
+    <button class="w3-button w3-orange w3-margin-right" onclick="calculate('divide')">Divide</button>
+    <button class="w3-button w3-red" onclick="clearField()">Clear</button>
+  </div>
 
+  <p id="display" class="w3-large w3-text-green"></p>
+
+  <a href="Tools.html" class="w3-button w3-gray w3-block">Back to Tools</a>
+</div>
+
+<script>
+  function calculate(operation) {
+    let no1 = parseFloat(document.getElementById("no1").value);
+    let no2 = parseFloat(document.getElementById("no2").value);
+
+    var result;
+    switch (operation) {
+      case 'add':
+        result = no1 + no2;
+        break;
+      case 'subtract':
+        result = no1 - no2;
+        break;
+      case 'multiply':
+        result = no1 * no2;
+        break;
+      case 'divide':
+        if (no2 === 0) {
+          document.getElementById("display").innerHTML = "Cannot divide by zero";
+          return;
+        }
+        result = no1 / no2;
+        break;
+    }
+    document.getElementById("display").innerHTML = "Result is: " + result.toString();
+  }
+
+  function clearField() {
+    document.getElementById("display").innerHTML = "";
+    document.getElementById("no1").value = "";
+    document.getElementById("no2").value = "";
+  }
+</script>
 </body>
 </html>
+
